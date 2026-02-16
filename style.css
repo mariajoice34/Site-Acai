@@ -1,0 +1,306 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(
+        180deg,
+        #f5e6f7,   /* Roxo claro */
+        #ffffff   /* Branco */
+    );
+ }
+
+ html {
+    scroll-behavior: smooth;
+}
+
+.titulo{
+    color: #663399;
+    font-family: Helvetica, sans-serif;
+}
+
+/* Estiliza o topo (cabeçalho) do site */
+#topo{
+   
+   display: flex;  /*alinhar os elementos */
+   justify-content:space-between; /* Um item à esquerda e outro à direita */
+   align-items: center; /* Centraliza os itens verticalmente */
+   width: 100%; /* Para ocupar toda a largura da tela */
+   position: fixed;  /* Mantém o topo fixo ao rolar a página */
+   background-color: #ffffff;  /* Fundo branco */
+   top:0;  /* Fixa no topo da tela */
+   z-index: 1; /* Garante que fique acima do conteúdo */
+   padding: 10px 20px;  /* Espaçamento interno vertical e lateral */
+   border-bottom: 2px solid #f0e6f5; /*criar borda a baixo do elemento*/
+   box-shadow: 0 2px 10px rgba(0,0,0,0.1); /*cria sombra ao redor do elemento*/
+}
+
+/* Agrupa os botões do carrinho e pedidos */
+.acoes {
+    display: flex;  /* Deixa os botões lado a lado */
+    gap: 12px;  /* Espaço entre os botões */
+    margin-right: 100px; /* Afasta os botões da borda direita */
+
+}
+
+/* Estiliza os botões do carrinho e pedidos */
+.acoes button {
+  border: none; /* Remove a borda preta */
+  border-radius: 50%;  /* Deixa os botões redondos */
+  width: 55px;  /* Largura do botão */
+  height: 55px; /* Altura do botão */
+  font-size: 18px;  /* Tamanho do ícone/emoji */
+  background-color: rgba(226, 216, 231, 0.959);
+}
+
+/*ajuste para celular*/
+@media (max-width: 768px) {
+  .corpo {
+    flex-direction: column;
+  }
+}
+
+.corpo{
+    margin-top: 100px; /* Afasta do topo fixo */
+    padding: 20px;
+    display: flex;  /* Coloca texto e imagem lado a lado */
+    align-items: center;  /* Centraliza verticalmente */
+    justify-content: center;/* Centraliza horizontalmente */
+     gap: 30px; /* Espaço entre texto e imagem */
+}
+
+.corpo img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do container */
+    max-width: 800px;  /* Limita o tamanho máximo da imagem */
+    display: block; /* Remove espaços extras e permite centralização */
+    margin: 15px auto; /* Espaço em cima/baixo e centraliza horizontalmente */
+    border-radius: 10px; /* Deixa as bordas da imagem arredondadas */
+}
+
+.texto {
+    display: flex; /* Flexbox no texto */
+    flex-direction: column;  /* Um item abaixo do outro */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    font-family: Helvetica, sans-serif;
+    color: #663399;
+}
+
+.corpo h2 {
+  font-size: 50px;      /* Aumenta o tamanho da letra */
+  font-weight: bold;   /* Deixa o texto mais forte */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+
+}
+
+@media (max-width: 768px) {
+  .corpo h2 {
+    font-size: 26px;
+  }
+}
+
+.corpo p {
+    color: rgb(184, 176, 176);
+    font-size: 22px; /* Aumenta o tamanho da letra */
+}
+
+/*texto organizado no celular*/
+@media (max-width: 768px) {
+  .corpo p {
+    font-size: 18px;
+  }
+}
+
+.corpo button{
+    border: none; /* Remove a borda preta */
+    border-radius: 25px;  /* Deixa os botões arredondados */
+    background: linear-gradient(135deg,
+        #6a0dad,   /* Roxo */
+        #b84b9e,   /* Rosa */
+        #ffffff    /* Branco */);
+
+    color: #fff;  /* Texto branco */
+    font-size: 16px;
+    font-weight: bold;  /* Texto em negrito */
+    cursor: pointer;   /* Mãozinha ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Sombra */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animação suave */
+    padding: 20px 50px;   /* AUMENTA o tamanho do botão */
+    min-width: 220px;    /* Largura mínima */
+    
+}
+
+.buts {
+    flex-wrap: wrap; /* Quebra linha no celular */
+}
+
+/* Estilo dos botões principais (Açaí, Bebidas e Salgados) */
+.but1, .but2, .but3{
+    height: 35px;   /* Define a altura do botão */
+    width: 200px;   /* Define a largura do botão */
+    border-radius: 20px; /* Deixa as bordas arredondadas */
+
+    /* Cria um fundo */
+    background: linear-gradient(135deg,
+        #6a0dad,   /* Roxo */
+        #b84b9e,   /* Rosa */
+        #ffffff    /* Branco */);
+
+    border: none;    /* Remove a borda padrão do botão */
+    color: #ffffff; /* Cor do texto (branco) */
+    margin: 50px;  /* Espaçamento externo ao redor do botão */
+    cursor: pointer;  /* Muda o cursor para "mãozinha" ao passar o mouse */
+}
+
+/* Efeito quando o mouse passa por cima dos botões */
+
+.corpo button:hover,
+.but1:hover,
+.but2:hover,
+.but3:hover {
+
+    transform: scale(1.05); /*Aumenta o tamanho do botão*/
+    box-shadow: 0 10px 18px rgba(0,0,0,0.25); /*Cria uma sombra mais forte ao passar o mouse*/
+}
+
+/* Estilo da área do cardápio */
+
+.cardapio {
+    width: 100%;
+    margin-top: 30px;   /* Espaço acima do cardápio */
+    padding: 30px;   /* Espaço interno (respiro) */
+    max-width: 1200px;    /* Largura máxima do cardápio */
+    background-color: #ffffff;  /* Fundo branco */
+    border-radius: 24px;    /* Bordas arredondadas */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);    /* Sombra suave ao redor do cardápio */
+    margin: 30px auto;
+
+     background: linear-gradient(
+        180deg,
+        #f5e6f7,   /* Roxo claro */
+        #ffffff   /* Branco */
+    );
+}
+
+/* Título do cardápio */
+
+.cardapio h2 {
+    text-align: center; /* Centraliza o texto */
+    color: #663399;  /* Cor roxa */
+    margin-bottom: 30px;     /* Espaço abaixo do título */
+}
+
+/* Container do item (imagem + informações) */
+.item {
+    display: flex;  /* Organiza os elementos lado a lado */
+    gap: 30px;   /* Espaço entre imagem e texto */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+/* Imagem do produto */
+.item img {
+    width: 280px; /* Largura da imagem */
+    border-radius: 15px;   /* Bordas arredondadas da imagem */
+}
+
+/* Texto das opções (350ml / 500ml) */
+.tamanhos {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza os itens em coluna */
+    gap: 8px;   /* Espaço entre as opções */
+    text-align: left;   /* Alinha o texto à esquerda */
+}
+
+.tamanhos label {
+    font-size: 16px;  /* Tamanho da fonte */
+    color: #663399;  /* Cor roxa */
+    cursor: pointer;  /* Mãozinha ao passar o mouse */
+}
+
+/* Botão "Adicionar ao carrinho" */ 
+
+.tamanhos button {
+    margin-top: 15px; /* Espaço acima do botão */
+    border: none; /* Remove borda padrão */
+    border-radius: 25px; /* Bordas bem arredondadas */
+    padding: 12px 25px;  /* Espaçamento interno */
+
+    /* Fundo em degradê roxo/rosa */
+    background: linear-gradient(135deg, #6a0dad, #b84b9e);
+
+    color: white;  /* Texto branco */
+    font-size: 16px;  /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+}
+
+/* Efeito hover do botão "Adicionar ao carrinho" */
+
+.tamanhos button:hover {
+    transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
+}
+
+/* Alinha o radio button ao lado do texto */
+
+.opcao-tamanho {
+    display: flex; /* Coloca itens lado a lado */
+    align-items: center;   /* Centraliza verticalmente */
+    gap: 10px;  /* Espaço entre a bolinha e o texto */
+}
+
+/* Remove margem padrão do h3 */
+
+.opcao-tamanho h3{
+    margin: 0;
+}
+
+.cardapio-img {
+    width: 100%;    /* Ocupa toda a largura */
+    height: 180px;    /* Altura do topo */
+    overflow: hidden; /* Corta o excesso da imagem */
+    border-radius: 20px 20px 0 0; /* Bordas só em cima */
+    
+}
+
+.cardapio-img img {
+    width: 100%;    /* Estica na horizontal */
+    height: 100%;  /* Estica na vertical */
+    object-fit: cover; /* Preenche sem distorcer */
+    display: block;
+    
+}
+
+.lista-acai {
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); 
+    gap: 25px; /*espaço em cima, baixo, esquerda e direita*/
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;      /* quebra linha */
+    justify-content: center;
+
+}
+
+.acai-item {
+    width: 280px;  /* controla quantos cabem por linha */
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+
+    text-align: center;
+    color: #663399;
+    font-weight: bold;
+   
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+
+.acai-item:hover {
+    transform: scale(1.05);
+}
+
+/*ajuste para celular*/
+@media (max-width: 768px) {
+    .lista-acai {
+        grid-template-columns: 1fr;
+    }
+}

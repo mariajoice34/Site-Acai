@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí Top</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOPO -->
+    <header id="topo">
+        <h1 class="titulo">🍇 Açaí Top</h1>
+
+        <div class="acoes">
+            <button>🛒</button>
+            <button>📋</button>
+        </div>
+    </header>
+
+    <!-- CORPO PRINCIPAL -->
+    <section class="corpo">
+        <div class="texto">
+            <h2>Açaí Fresquinho</h2>
+            <p>Os melhores açaís da cidade, feitos com amor e ingredientes selecionados.</p>
+            <a href="#cardapio-acai" class="vercardapio">
+                <button class="vercardapio">Ver Cardápio</button>
+            </a>
+        </div>
+
+        <img src="img/açai.jpeg" alt="Foto de tigela de Açaí">
+    </section>
+
+    <!-- BOTÕES DE CATEGORIA -->
+    <section class="buts">
+        <button class="but1" id="btn-acai">Açaí</button>
+        <button class="but2">Bebidas</button>
+        <button class="but3">Salgados</button>
+    </section>
+
+    <!-- CARDÁPIO DE AÇAÍ -->
+    <section id="cardapio-acai" class="cardapio">
+
+    <!-- Container geral -->
+    <div class="lista-acai">   
+
+        <!--Açai tradicional-->
+        <div class="acai-item">
+        <!--Imagem no Topo-->
+            <div class="cardapio-img">
+                <img src="img/açaiC.png" alt="Açaí Tradicional">
+            </div>
+
+            <h2>🍇Açaí Tradiconal</h2>
+
+            <div class="item">
+                <div class="info">
+                    <h3>Ingredientes:</h3>
+                    <p>Açai Tradicional , Granola, Amendoim, Banana e Leite Condensado.</p>
+                    
+                    <div class="tamanhos">
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="tradicional" value="350ml - R$ 10,00" checked>
+                            <h3>350ml - R$ 10,00</h3>
+                        </label>
+
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="tradicional" value="500ml - R$ 15,00">
+                            <h3>500ml - R$ 15,00</h3>
+                        </label>
+
+                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Açai zero -->
+        <div class="acai-item">
+        <!--Imagem no Topo-->
+            <div class="cardapio-img">
+                <img src="img/acai-zero.png" alt="Açaí zero">
+            </div>
+
+            <h2>🍇Açaí Zero</h2>
+
+            <div class="item">
+                <div class="info">
+                    <p>Açaí sem açúcar, ideal para quem busca leveza e saúde.</p>
+                    
+                    <div class="tamanhos">
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="acai" value="350ml - R$ 11,00" checked>
+                            <h3>350ml - R$ 11,00</h3>
+                        </label>
+
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="acai" value="500ml - R$ 16,00">
+                            <h3>500ml - R$ 16,00</h3>
+                        </label>
+
+                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--Creme de Guaraná-->
+        <div class="acai-item">
+        <!--Imagem no Topo-->
+            <div class="cardapio-img">
+                <img src="img/guarana.png" alt="--Creme de Guaraná">
+            </div>
+
+            <h2>🍇Creme de Guarana</h2>
+
+            <div class="item">
+                <div class="info">
+                    <p>Creme gelado de guaraná, doce e refrescante.</p>
+                    
+                    <div class="tamanhos">
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="guarana" value="350ml - R$ 10,00" checked>
+                            <h3>350ml - R$ 10,00</h3>
+                        </label>
+
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="guarana" value="500ml - R$ 15,00">
+                            <h3>500ml - R$ 15,00</h3>
+                        </label>
+
+                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--Creme de Cupuaçu-->
+        <div class="acai-item">
+        <!--Imagem no Topo-->
+            <div class="cardapio-img">
+                <img src="img/cupuaçu.png" alt="--Creme de Cupuaçu">
+            </div>
+
+            <h2>🍇Creme de Cupuaçu</h2>
+
+            <div class="item">
+                <div class="info">
+                    <p>Creme amazônico com sabor marcante e suave.</p>
+                    
+                    <div class="tamanhos">
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="cupuaçu" value="350ml - R$ 10,00" checked>
+                            <h3>350ml - R$ 10,00</h3>
+                        </label>
+
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="cupuaçu" value="500ml - R$ 15,00">
+                            <h3>500ml - R$ 15,00</h3>
+                        </label>
+
+                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Açai + Cupuaçu-->
+         <div class="acai-item">
+            <!--Imagem no Topo-->
+            <div class="cardapio-img">
+                <img src="img/acai-cupuacu.png" alt="Açai mais Cupuaçu">
+            </div>
+
+            <h2>🍇Mix Açai + Cupuaçu</h2>
+
+            <div class="item">
+                <div class="info">
+                    <p>Combinação perfeita de açaí tradicional com creme de cupuaçu.</p>
+                    
+                    <div class="tamanhos">
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="acai-cupuacu" value="350ml - R$ 10,00" checked>
+                            <h3>350ml - R$ 10,00</h3>
+                        </label>
+
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="acai-cupuacu" value="500ml - R$ 15,00">
+                            <h3>500ml - R$ 15,00</h3>
+                        </label>
+
+                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Açai + guaraná-->
+        <div class="acai-item">
+            <!--Imagem no Topo-->
+            <div class="cardapio-img">
+                <img src="img/acai-guarana.png" alt="Açai mais Guaraná">
+            </div>
+
+            <h2>🍇Mix Açai + Guaraná</h2>
+
+            <div class="item">
+                <div class="info">
+                    <p>Combinação perfeita de açaí tradicional com creme de Guaraná.</p>
+                    
+                    <div class="tamanhos">
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="acai-guarana" value="350ml - R$ 10,00" checked>
+                            <h3>350ml - R$ 10,00</h3>
+                        </label>
+
+                        <label class="opcao-tamanho">
+                            <input type="radio" name="acai-guarana" value="500ml - R$ 15,00">
+                            <h3>500ml - R$ 15,00</h3>
+                        </label>
+
+                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+         </div> 
+    </section>
+
+    <!-- JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
