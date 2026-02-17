@@ -25,9 +25,9 @@
         <div class="texto">
             <h2>Açaí Fresquinho</h2>
             <p>Os melhores açaís da cidade, feitos com amor e ingredientes selecionados.</p>
-            <a href="#cardapio-acai" class="vercardapio">
-                <button class="vercardapio">Ver Cardápio</button>
-            </a>
+          <button id="btn-ver-cardapio" class="vercardapio">
+             Ver Cardápio
+          </button>
         </div>
 
         <img src="img/açai.jpeg" alt="Foto de tigela de Açaí">
@@ -36,7 +36,7 @@
     <!-- BOTÕES DE CATEGORIA -->
     <section class="buts">
         <button class="but1" id="btn-acai">Açaí</button>
-        <button class="but2">Bebidas</button>
+        <button class="but2" id="btn-bebidas">Bebidas</button>
         <button class="but3">Salgados</button>
     </section>
 
@@ -111,7 +111,7 @@
         <div class="acai-item">
         <!--Imagem no Topo-->
             <div class="cardapio-img">
-                <img src="img/guarana.png" alt="--Creme de Guaraná">
+                <img src="img/creme-guarana.png" alt="--Creme de Guaraná">
             </div>
 
             <h2>🍇Creme de Guarana</h2>
@@ -225,8 +225,180 @@
                     </div>
                 </div>
             </div>
-         </div> 
     </section>
+    
+<!-- CARDÁPIO DE BEBIDAS -->
+<section id="cardapio-bebidas" class="cardapio" style="display: none;">
+
+    <h2>🥤 Bebidas</h2>
+
+    <div class="lista-acai">
+
+        <!-- Coca-Cola -->
+        <div class="acai-item">
+            <div class="cardapio-img">
+                <img src="img/coca.png" alt="Coca-Cola">
+            </div>
+
+            <h2>🥤 Coca-Cola</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="coca" value="Coca-Cola - R$ 6,00" checked>
+                    <h3>Coca-Cola - R$ 6,00</h3>
+                </label>
+                
+                <button onclick="adicionarCarrinhoBebida('coca')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+         <!-- Guaraná -->
+          <div class="acai-item">
+            <div class="cardapio-img">
+                <img src="img/guarana.png" alt="Guaraná">
+            </div>
+
+            <h2>Guaraná</h2>
+
+            <div class="tamanhos">
+                 <label class="opcao-tamanho">
+                    <input type="radio" name="guarana-bebida" value="Guaraná - R$ 6,00">
+                    <h3>Lata 350ml- R$ 6,00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinhoBebida('guarana-bebida')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+          </div>
+
+        <!-- Fanta Uva -->
+          <div class="acai-item">
+                <div class="cardapio-img">
+                    <img src="img/fanta-uva.png" alt="Fanta Uva">
+                </div>
+          
+
+          <h2>Fanta Uva</h2>
+
+          <div class="tamanhos">
+              <label class="opcao-tamanho">
+                    <input type="radio" name="fanta" value="Fanta Uva - R$ 6,00">
+                    <h3>Fanta Uva - R$ 6,00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinhoBebida('fanta')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- Pepsi -->
+        <div class="acai-item">
+            <div class="cardapio-img">
+                <img src="img/pepsi.png" alt="Pepsi">
+            </div>
+
+            <h2>Pepsi</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="refrigerante" value="Pepsi - R$ 6,00">
+                    <h3>Pepsi - R$ 6,00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinhoBebida('pepsi')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+    
+    <!-- Suco de Manga -->
+        <div class="acai-item">
+            <div class="cardapio-img">
+                <img src="img/manga.png" alt="Suco de Manga">
+            </div>
+
+            <h2>Suco de Manga</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="manga" value="Suco de Manga - R$ 8,00" checked>
+                    <h3>300ml - R$ 8,00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinhoBebida('manga')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- Suco de Goiaba -->
+        <div class="acai-item">
+            <div class="cardapio-img">
+                <img src="img/goiaba.png" alt="Suco de Goiaba">
+            </div>
+
+            <h2>Suco de Goiaba</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="goiaba" value="Suco de Goiaba - R$ 8,00" checked>
+                    <h3>300ml - R$ 8,00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinhoBebida('goiaba')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- Suco de Maracujá -->
+        <div class="acai-item">
+            <div class="cardapio-img">
+                <img src="img/maracuja.png" alt="Suco de Maracujá">
+            </div>
+
+            <h2>Suco de Maracujá</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="maracuja" value="Suco de Maracujá - R$ 8,00" checked>
+                    <h3>300ml - R$ 8,00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinhoBebida('maracuja')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- Suco de Acerola -->
+        <div class="acai-item">
+            <div class="cardapio-img">
+                <img src="img/acerola.png" alt="Suco de Acerola">
+            </div>
+
+            <h2>Suco de Acerola</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="acerola" value="Suco de Acerola - R$ 8,00" checked>
+                    <h3>300ml - R$ 8,00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinhoBebida('acerola')">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
 
     <!-- JS -->
     <script src="scripts.js"></script>

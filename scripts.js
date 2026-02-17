@@ -19,15 +19,17 @@ btnAcai.addEventListener("click", () => {
 // Função chamada quando o botão "Adicionar ao carrinho" é clicado
 function adicionarCarrinho() {
 
-    // Busca o radio button marcado (checked)
-    // que tenha o name="tamanho-acai"
-    const tamanhoSelecionado = document.querySelector(
-        'input[name="tamanho-acai"]:checked'
-    ).value;
+    const selecionado = document.querySelector(
+        '.acai-item input[type="radio"]:checked'
+    );
 
-// Exibe um alerta mostrando o tamanho escolhido
+    if (!selecionado) {
+        alert("Selecione um tamanho!");
+        return;
+    }
+
     alert(
-        "🍇 Açaí adicionado ao carrinho!\nTamanho: " + tamanhoSelecionado
+        "🍇 Açaí adicionado ao carrinho!\nTamanho: " + selecionado.value
     );
 }
 
@@ -45,3 +47,20 @@ btnVerCardapio.addEventListener("click", () => {
 // Rola a página suavemente até o cardápio
     cardapio.scrollIntoView({ behavior: "smooth" });
 });
+
+const btnBebidas = document.getElementById("btn-bebidas");
+const cardapioBebidas = document.getElementById("cardapio-bebidas");
+
+btnBebidas.addEventListener("click", () => {
+    cardapioBebidas.style.display = "block";
+    cardapioBebidas.scrollIntoView({ behavior: "smooth" });
+});
+
+function adicionarCarrinhoBebida(tipo) {
+
+    const bebidaSelecionada = document.querySelector(
+        'input[name="' + tipo + '"]:checked'
+    ).value;
+
+    alert("🥤 Bebida adicionada ao carrinho!\nItem: " + bebidaSelecionada);
+}

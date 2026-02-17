@@ -270,7 +270,6 @@ body{
 }
 
 .lista-acai {
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); 
     gap: 25px; /*espaço em cima, baixo, esquerda e direita*/
     margin-top: 20px;
     display: flex;
