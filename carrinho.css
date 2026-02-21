@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg,
+        #f5e6f7,   /* Roxo claro */
+        #ffffff   /* Branco */);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.carrinho-container {
+     background: linear-gradient(180deg,
+        #f5e6f7,   /* Roxo claro */
+        #ffffff   /* Branco */);
+    width: 90%;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #7b2cbf;
+    margin-bottom: 25px;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#lista-carrinho li {
+    background: #c2add8;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #5a189a;
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.botoes-carrinho {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    height: 35px;   /* Define a altura do botão */
+    width: 200px;   /* Define a largura do botão */
+    border-radius: 20px; /* Deixa as bordas arredondadas */
+
+    /* Cria um fundo */
+    background: linear-gradient(135deg,
+        #6a0dad,   /* Roxo */
+        #b84b9e,   /* Rosa */
+        #ffffff    /* Branco */);
+
+    border: none;    /* Remove a borda padrão do botão */
+    color: #ffffff; /* Cor do texto (branco) */
+    margin: 50px;  /* Espaçamento externo ao redor do botão */
+    cursor: pointer;  /* Muda o cursor para "mãozinha" ao passar o mouse */
+}
+
+
+.btn-limpar {
+       height: 35px;   /* Define a altura do botão */
+    width: 200px;   /* Define a largura do botão */
+    border-radius: 20px; /* Deixa as bordas arredondadas */
+
+    /* Cria um fundo */
+    background: linear-gradient(135deg,
+        #6a0dad,   /* Roxo */
+        #b84b9e,   /* Rosa */
+        #ffffff    /* Branco */);
+
+    border: none;    /* Remove a borda padrão do botão */
+    color: #ffffff; /* Cor do texto (branco) */
+    margin: 50px;  /* Espaçamento externo ao redor do botão */
+    cursor: pointer;  /* Muda o cursor para "mãozinha" ao passar o mouse */
+}
+
+
+
+.btn-voltar {
+    background: #7b2cbf;
+    color: white;
+}
+
+.btn-voltar:hover {
+    background: #5a189a;
+}
+
+.item-carrinho {
+    background: #f3e8ff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.controle-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.controle-quantidade button {
+    background: #7b2cbf;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-remover {
+    background: #ff4d6d;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-finalizar {
+    background: linear-gradient(135deg,
+        #6a0dad,   /* Roxo */
+        #b84b9e,   /* Rosa */
+        #ffffff    /* Branco */);
+    color: white;
+}
+
+

@@ -15,7 +15,7 @@
         <h1 class="titulo">🍇 Açaí Top</h1>
 
         <div class="acoes">
-            <button>🛒</button>
+           <a href="carrinho.html" class="bnt-carrinho"><button>🛒</button></a>
             <button>📋</button>
         </div>
     </header>
@@ -25,9 +25,10 @@
         <div class="texto">
             <h2>Açaí Fresquinho</h2>
             <p>Os melhores açaís da cidade, feitos com amor e ingredientes selecionados.</p>
-          <button id="btn-ver-cardapio" class="vercardapio">
-             Ver Cardápio
-          </button>
+         <button id="btn-ver-cardapio">
+            Ver Cardápio
+        </button>
+
         </div>
 
         <img src="img/açai.jpeg" alt="Foto de tigela de Açaí">
@@ -37,7 +38,7 @@
     <section class="buts">
         <button class="but1" id="btn-acai">Açaí</button>
         <button class="but2" id="btn-bebidas">Bebidas</button>
-        <button class="but3">Salgados</button>
+       <button class="but3" id="btn-salgados">Salgados</button>
     </section>
 
     <!-- CARDÁPIO DE AÇAÍ -->
@@ -47,7 +48,7 @@
     <div class="lista-acai">   
 
         <!--Açai tradicional-->
-        <div class="acai-item">
+        <div class="produto-item">
         <!--Imagem no Topo-->
             <div class="cardapio-img">
                 <img src="img/açaiC.png" alt="Açaí Tradicional">
@@ -62,23 +63,23 @@
                     
                     <div class="tamanhos">
                         <label class="opcao-tamanho">
-                            <input type="radio" name="tradicional" value="350ml - R$ 10,00" checked>
-                            <h3>350ml - R$ 10,00</h3>
+                            <input type="radio" name="tradicional" value="350ml - R$ 10.00" checked>
+                            <h3>350ml - R$ 10.00</h3>
                         </label>
 
                         <label class="opcao-tamanho">
-                            <input type="radio" name="tradicional" value="500ml - R$ 15,00">
-                            <h3>500ml - R$ 15,00</h3>
+                            <input type="radio" name="tradicional" value="500ml - R$ 15.00">
+                            <h3>500ml - R$ 15.00</h3>
                         </label>
 
-                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                        <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
         </div>
 
     <!-- Açai zero -->
-        <div class="acai-item">
+        <div class="produto-item">
         <!--Imagem no Topo-->
             <div class="cardapio-img">
                 <img src="img/acai-zero.png" alt="Açaí zero">
@@ -92,23 +93,23 @@
                     
                     <div class="tamanhos">
                         <label class="opcao-tamanho">
-                            <input type="radio" name="acai" value="350ml - R$ 11,00" checked>
-                            <h3>350ml - R$ 11,00</h3>
+                            <input type="radio" name="acai" value="350ml - R$ 11.00" checked>
+                            <h3>350ml - R$ 11.00</h3>
                         </label>
 
                         <label class="opcao-tamanho">
-                            <input type="radio" name="acai" value="500ml - R$ 16,00">
-                            <h3>500ml - R$ 16,00</h3>
+                            <input type="radio" name="acai" value="500ml - R$ 16.00">
+                            <h3>500ml - R$ 16.00</h3>
                         </label>
 
-                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                        <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
         </div>
 
     <!--Creme de Guaraná-->
-        <div class="acai-item">
+        <div class="produto-item">
         <!--Imagem no Topo-->
             <div class="cardapio-img">
                 <img src="img/creme-guarana.png" alt="--Creme de Guaraná">
@@ -122,22 +123,22 @@
                     
                     <div class="tamanhos">
                         <label class="opcao-tamanho">
-                            <input type="radio" name="guarana" value="350ml - R$ 10,00" checked>
-                            <h3>350ml - R$ 10,00</h3>
+                            <input type="radio" name="guarana" value="350ml - R$ 10.00" checked>
+                            <h3>350ml - R$ 10.00</h3>
                         </label>
 
                         <label class="opcao-tamanho">
-                            <input type="radio" name="guarana" value="500ml - R$ 15,00">
-                            <h3>500ml - R$ 15,00</h3>
+                            <input type="radio" name="guarana" value="500ml - R$ 15.00">
+                            <h3>500ml - R$ 15.00</h3>
                         </label>
 
-                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                        <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
         </div>
     <!--Creme de Cupuaçu-->
-        <div class="acai-item">
+        <div class="produto-item">
         <!--Imagem no Topo-->
             <div class="cardapio-img">
                 <img src="img/cupuaçu.png" alt="--Creme de Cupuaçu">
@@ -151,23 +152,23 @@
                     
                     <div class="tamanhos">
                         <label class="opcao-tamanho">
-                            <input type="radio" name="cupuaçu" value="350ml - R$ 10,00" checked>
-                            <h3>350ml - R$ 10,00</h3>
+                            <input type="radio" name="cupuaçu" value="350ml - R$ 10.00" checked>
+                            <h3>350ml - R$ 10.00</h3>
                         </label>
 
                         <label class="opcao-tamanho">
-                            <input type="radio" name="cupuaçu" value="500ml - R$ 15,00">
-                            <h3>500ml - R$ 15,00</h3>
+                            <input type="radio" name="cupuaçu" value="500ml - R$ 15.00">
+                            <h3>500ml - R$ 15.00</h3>
                         </label>
 
-                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                        <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!--Açai + Cupuaçu-->
-         <div class="acai-item">
+         <div class="produto-item">
             <!--Imagem no Topo-->
             <div class="cardapio-img">
                 <img src="img/acai-cupuacu.png" alt="Açai mais Cupuaçu">
@@ -181,23 +182,23 @@
                     
                     <div class="tamanhos">
                         <label class="opcao-tamanho">
-                            <input type="radio" name="acai-cupuacu" value="350ml - R$ 10,00" checked>
-                            <h3>350ml - R$ 10,00</h3>
+                            <input type="radio" name="acai-cupuacu" value="350ml - R$ 10.00" checked>
+                            <h3>350ml - R$ 10.00</h3>
                         </label>
 
                         <label class="opcao-tamanho">
-                            <input type="radio" name="acai-cupuacu" value="500ml - R$ 15,00">
-                            <h3>500ml - R$ 15,00</h3>
+                            <input type="radio" name="acai-cupuacu" value="500ml - R$ 15.00">
+                            <h3>500ml - R$ 15.00</h3>
                         </label>
 
-                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                        <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!--Açai + guaraná-->
-        <div class="acai-item">
+        <div class="produto-item">
             <!--Imagem no Topo-->
             <div class="cardapio-img">
                 <img src="img/acai-guarana.png" alt="Açai mais Guaraná">
@@ -211,51 +212,117 @@
                     
                     <div class="tamanhos">
                         <label class="opcao-tamanho">
-                            <input type="radio" name="acai-guarana" value="350ml - R$ 10,00" checked>
-                            <h3>350ml - R$ 10,00</h3>
+                            <input type="radio" name="acai-guarana" value="350ml - R$ 10.00" checked>
+                            <h3>350ml - R$ 10.00</h3>
                         </label>
 
                         <label class="opcao-tamanho">
-                            <input type="radio" name="acai-guarana" value="500ml - R$ 15,00">
-                            <h3>500ml - R$ 15,00</h3>
+                            <input type="radio" name="acai-guarana" value="500ml - R$ 15.00">
+                            <h3>500ml - R$ 15.00</h3>
                         </label>
 
-                        <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
+                        <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
                          </div>
                     </div>
                 </div>
             </div>
+
+            <div class="produto-item monte-acai">
+
+<!-- 1 creme → R$ 15
+     2 cremes → R$ 18
+     + 3 ingredientes → +6
+     + calda → +1,50-->
+
+
+   <div class="produto-item monte-acai">
+
+    <img src="imagens/monte-acai.jpg" alt="Monte seu Açaí" class="img-monte">
+
+    <h2>🍧 Monte Seu Açaí</h2>
+
+    <button class="btn-mostrar-opcoes" onclick="toggleMonteAcai()">
+        Adicionar Açaí
+    </button>
+
+    <div id="opcoes-monte-acai" class="opcoes-monte">
+
+        <h3>Escolha até 2 Cremes:</h3>
+        <div class="opcoes">
+            <label><input type="checkbox" class="creme" value="Açaí Tradicional"> Açaí Tradicional</label>
+            <label><input type="checkbox" class="creme" value="Açaí Zero"> Açaí Zero</label>
+            <label><input type="checkbox" class="creme" value="Creme de Guaraná"> Creme de Guaraná</label>
+            <label><input type="checkbox" class="creme" value="Cupuaçu"> Cupuaçu</label>
+        </div>
+
+        <h3>Escolha até 3 Ingredientes:</h3>
+        <div class="opcoes">
+            <label><input type="checkbox" class="ingrediente" value="Granola"> Granola</label>
+            <label><input type="checkbox" class="ingrediente" value="Leite em pó"> Leite em pó</label>
+            <label><input type="checkbox" class="ingrediente" value="Banana"> Banana</label>
+            <label><input type="checkbox" class="ingrediente" value="Amendoim"> Amendoim</label>
+            <label><input type="checkbox" class="ingrediente" value="Gotas de Chocolate"> Gotas de Chocolate</label>
+            <label><input type="checkbox" class="ingrediente" value="Paçoca"> Paçoca</label>
+            <label><input type="checkbox" class="ingrediente" value="Granulado"> Granulado</label>
+            <label><input type="checkbox" class="ingrediente" value="Jujuba"> Jujuba</label>
+            <label><input type="checkbox" class="ingrediente" value="MM"> MM</label>
+            <label><input type="checkbox" class="ingrediente" value="Marshmallow"> Marshmallow</label>
+            <label><input type="checkbox" class="ingrediente" value="Brigadeiro"> Brigadeiro</label>
+            <label><input type="checkbox" class="ingrediente" value="Morango"> Morango</label>
+            <label><input type="checkbox" class="ingrediente" value="Kiwi"> Kiwi</label>
+            <label><input type="checkbox" class="ingrediente" value="Manga"> Manga</label>
+        </div>
+
+        <h3>Escolha 1 Calda:</h3>
+        <div class="opcoes">
+            <label><input type="radio" name="calda" value="Leite Condensado"> Leite Condensado</label>
+            <label><input type="radio" name="calda" value="Morango"> Morango</label>
+            <label><input type="radio" name="calda" value="Chocolate"> Chocolate</label>
+            <label><input type="radio" name="calda" value="Uva"> Uva</label>
+            <label><input type="radio" name="calda" value="Caramelo"> Caramelo</label>
+        </div>
+
+        <h2>Total: R$ <span id="preco-monte">15.00</span></h2>
+
+        <button onclick="adicionarMonteAcai()" class="btn-finalizar">
+            Adicionar ao Carrinho
+        </button>
+
+    </div>
+</div>
+
+
     </section>
     
 <!-- CARDÁPIO DE BEBIDAS -->
-<section id="cardapio-bebidas" class="cardapio" style="display: none;">
+<section id="cardapio-bebidas" class="cardapio">
 
     <h2>🥤 Bebidas</h2>
 
     <div class="lista-acai">
 
         <!-- Coca-Cola -->
-        <div class="acai-item">
+        <div class="produto-item">
             <div class="cardapio-img">
                 <img src="img/coca.png" alt="Coca-Cola">
             </div>
 
-            <h2>🥤 Coca-Cola</h2>
+            <h2>Coca-Cola</h2>
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="radio" name="coca" value="Coca-Cola - R$ 6,00" checked>
-                    <h3>Coca-Cola - R$ 6,00</h3>
+                    <input type="radio" name="coca" value="Coca-Cola - R$ 6.00" checked>
+                    <h3>Coca Cola - R$ 6.00</h3>
                 </label>
                 
-                <button onclick="adicionarCarrinhoBebida('coca')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
         </div>
 
          <!-- Guaraná -->
-          <div class="acai-item">
+          <div class="produto-item">
             <div class="cardapio-img">
                 <img src="img/guarana.png" alt="Guaraná">
             </div>
@@ -264,18 +331,18 @@
 
             <div class="tamanhos">
                  <label class="opcao-tamanho">
-                    <input type="radio" name="guarana-bebida" value="Guaraná - R$ 6,00">
-                    <h3>Lata 350ml- R$ 6,00</h3>
+                    <input type="radio" name="guarana-bebida" value="Guaraná - R$ 6.00">
+                    <h3>Lata 350ml- R$ 6.00</h3>
                 </label>
 
-                <button onclick="adicionarCarrinhoBebida('guarana-bebida')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
           </div>
 
         <!-- Fanta Uva -->
-          <div class="acai-item">
+          <div class="produto-item">
                 <div class="cardapio-img">
                     <img src="img/fanta-uva.png" alt="Fanta Uva">
                 </div>
@@ -285,18 +352,18 @@
 
           <div class="tamanhos">
               <label class="opcao-tamanho">
-                    <input type="radio" name="fanta" value="Fanta Uva - R$ 6,00">
-                    <h3>Fanta Uva - R$ 6,00</h3>
+                    <input type="radio" name="fanta" value="Fanta Uva - R$ 6.00">
+                    <h3>Fanta Uva - R$ 6.00</h3>
                 </label>
 
-                <button onclick="adicionarCarrinhoBebida('fanta')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
         </div>
 
         <!-- Pepsi -->
-        <div class="acai-item">
+        <div class="produto-item">
             <div class="cardapio-img">
                 <img src="img/pepsi.png" alt="Pepsi">
             </div>
@@ -305,11 +372,11 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="radio" name="refrigerante" value="Pepsi - R$ 6,00">
-                    <h3>Pepsi - R$ 6,00</h3>
+                    <input type="radio" name="refrigerante" value="Pepsi - R$ 6.00">
+                    <h3>Pepsi - R$ 6.00</h3>
                 </label>
 
-                <button onclick="adicionarCarrinhoBebida('pepsi')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
@@ -317,7 +384,7 @@
 
     
     <!-- Suco de Manga -->
-        <div class="acai-item">
+        <div class="produto-item">
             <div class="cardapio-img">
                 <img src="img/manga.png" alt="Suco de Manga">
             </div>
@@ -326,18 +393,18 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="radio" name="manga" value="Suco de Manga - R$ 8,00" checked>
-                    <h3>300ml - R$ 8,00</h3>
+                    <input type="radio" name="manga" value="Suco de Manga - R$ 3.50" checked>
+                    <h3>300ml - R$ 3.50</h3>
                 </label>
 
-                <button onclick="adicionarCarrinhoBebida('manga')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
         </div>
 
         <!-- Suco de Goiaba -->
-        <div class="acai-item">
+        <div class="produto-item">
             <div class="cardapio-img">
                 <img src="img/goiaba.png" alt="Suco de Goiaba">
             </div>
@@ -346,18 +413,18 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="radio" name="goiaba" value="Suco de Goiaba - R$ 8,00" checked>
-                    <h3>300ml - R$ 8,00</h3>
+                    <input type="radio" name="goiaba" value="Suco de Goiaba - R$ 3.50" checked>
+                    <h3>300ml - R$ 3.50</h3>
                 </label>
 
-                <button onclick="adicionarCarrinhoBebida('goiaba')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
         </div>
 
         <!-- Suco de Maracujá -->
-        <div class="acai-item">
+        <div class="produto-item">
             <div class="cardapio-img">
                 <img src="img/maracuja.png" alt="Suco de Maracujá">
             </div>
@@ -366,18 +433,18 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="radio" name="maracuja" value="Suco de Maracujá - R$ 8,00" checked>
-                    <h3>300ml - R$ 8,00</h3>
+                    <input type="radio" name="maracuja" value="Suco de Maracujá - R$ 3.50" checked>
+                    <h3>300ml - R$ 3.50</h3>
                 </label>
 
-                <button onclick="adicionarCarrinhoBebida('maracuja')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
         </div>
 
         <!-- Suco de Acerola -->
-        <div class="acai-item">
+        <div class="produto-item">
             <div class="cardapio-img">
                 <img src="img/acerola.png" alt="Suco de Acerola">
             </div>
@@ -386,11 +453,11 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="radio" name="acerola" value="Suco de Acerola - R$ 8,00" checked>
-                    <h3>300ml - R$ 8,00</h3>
+                    <input type="radio" name="acerola" value="Suco de Acerola - R$ 3.50" checked>
+                    <h3>300ml - R$ 3.50</h3>
                 </label>
 
-                <button onclick="adicionarCarrinhoBebida('acerola')">
+                <button onclick="adicionarCarrinho(this)">
                     Adicionar ao carrinho
                 </button>
             </div>
@@ -399,6 +466,111 @@
 </section>
 
     
+    <!-- CARDÁPIO DE SALGADOS -->
+<section id="cardapio-salgados" class="cardapio">
+
+    <h2>🥟 Salgados</h2>
+
+    <div class="lista-acai">
+
+        <!-- Coxinha -->
+        <div class="produto-item">
+            <div class="cardapio-img">
+                <img src="img/coxinha.png" alt="Coxinha de Frango">
+            </div>
+
+            <h2>Coxinha</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="coxinha" value="Coxinha de Frango - R$ 3.00" checked>
+                    <h3>Frango - R$ 3.00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinho(this)">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- Enroladinho -->
+        <div class="produto-item">
+            <div class="cardapio-img">
+                <img src="img/enroladinho.png" alt="Enroladinho">
+            </div>
+
+            <h2>Enroladinho</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="enroladinho" value="Enroladinho - R$ 3.00" checked>
+                    <h3>Unidade - R$ 3.00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinho(this)">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- Pastel -->
+        <div class="produto-item">
+            <div class="cardapio-img">
+                <img src="img/pastel.png" alt="Pastel">
+            </div>
+
+            <h2>Pastel</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="pastel" value="Pastel de Carne - R$ 4.00" checked>
+                    <h3>Carne - R$ 4.00</h3>
+                </label>
+
+                <label class="opcao-tamanho">
+                    <input type="radio" name="pastel" value="Pastel de Frango - R$ 4.00">
+                    <h3>Frango - R$ 4,00</h3>
+                </label>
+
+                <label class="opcao-tamanho">
+                    <input type="radio" name="pastel" value="Pastel Misto - R$ 4.00">
+                    <h3>Misto - R$ 4.00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinho(this)">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+        <!-- Empada -->
+        <div class="produto-item">
+            <div class="cardapio-img">
+                <img src="img/empada.png" alt="Empada">
+            </div>
+
+            <h2>Empada</h2>
+
+            <div class="tamanhos">
+                <label class="opcao-tamanho">
+                    <input type="radio" name="empada" value="Empada de Frango - R$ 3.00" checked>
+                    <h3>Frango - R$ 3.00</h3>
+                </label>
+
+                <label class="opcao-tamanho">
+                    <input type="radio" name="empada" value="Empada Doce - R$ 3.00">
+                    <h3>Doce - R$ 3.00</h3>
+                </label>
+
+                <button onclick="adicionarCarrinho(this)">
+                    Adicionar ao carrinho
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
     <!-- JS -->
     <script src="scripts.js"></script>

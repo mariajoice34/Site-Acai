@@ -50,6 +50,12 @@ body{
   height: 55px; /* Altura do botão */
   font-size: 18px;  /* Tamanho do ícone/emoji */
   background-color: rgba(226, 216, 231, 0.959);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.acoes button:hover {
+  transform: scale(1.1);
 }
 
 /*ajuste para celular*/
@@ -60,7 +66,7 @@ body{
 }
 
 .corpo{
-    margin-top: 100px; /* Afasta do topo fixo */
+    margin-top: 120px; /* Afasta do topo fixo */
     padding: 20px;
     display: flex;  /* Coloca texto e imagem lado a lado */
     align-items: center;  /* Centraliza verticalmente */
@@ -70,7 +76,7 @@ body{
 
 .corpo img {
     width: 100%; /* Faz a imagem ocupar 100% da largura do container */
-    max-width: 800px;  /* Limita o tamanho máximo da imagem */
+    max-width: 700px;  /* Limita o tamanho máximo da imagem */
     display: block; /* Remove espaços extras e permite centralização */
     margin: 15px auto; /* Espaço em cima/baixo e centraliza horizontalmente */
     border-radius: 10px; /* Deixa as bordas da imagem arredondadas */
@@ -99,8 +105,8 @@ body{
 }
 
 .corpo p {
-    color: rgb(184, 176, 176);
-    font-size: 22px; /* Aumenta o tamanho da letra */
+    color: rgb(150, 150, 150);
+    font-size: 20px; /* Aumenta o tamanho da letra */
 }
 
 /*texto organizado no celular*/
@@ -278,7 +284,7 @@ body{
 
 }
 
-.acai-item {
+.produto-item {
     width: 280px;  /* controla quantos cabem por linha */
     background-color: #ffffff;
     border-radius: 15px;
@@ -293,7 +299,7 @@ body{
 }
 
 
-.acai-item:hover {
+.produto-item:hover {
     transform: scale(1.05);
 }
 
@@ -303,3 +309,4 @@ body{
         grid-template-columns: 1fr;
     }
 }
+
