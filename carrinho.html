@@ -7,38 +7,56 @@
     <link rel="stylesheet" href="carrinho.css">
 </head>
 <body>
-   <div class="carrinho-container">
 
-    <h1>🛒 Seu Carrinho</h1>
+    <div class="carrinho-container">
 
-    <div id="carrinho-box">
-        <ul id="lista-carrinho"></ul>
+        <h1>🛒 Seu Carrinho</h1>
 
-        <div class="total-box">
-            <h3>Total:</h3>
-            <span>R$ <span id="total">0.00</span></span>
-        </div>
+        <div id="carrinho-box">
+            <div id="lista-carrinho"></div>
 
-        <div class="botoes-carrinho">
-            <button class="btn-limpar" onclick="limparCarrinho()">
-                Limpar Carrinho
-            </button>
+            <div class="total-box">
+                <h3>Total:</h3>
+                <span>R$ <span id="total">0.00</span></span>
+            </div>
+<div class="dados-cliente">
+    <h3>Dados para entrega</h3>
 
-            <a href="index.html">
-                <button class="btn-voltar">
-                    Continuar Comprando
+    <label>Nome:</label>
+    <input type="text" id="nome-cliente" placeholder="Digite seu nome">
+
+    <label>Endereço:</label>
+    <input type="text" id="endereco-cliente" placeholder="Rua, número, bairro">
+
+    <label>Referência:</label>
+    <input type="text" id="referencia-cliente" placeholder="Ex: próximo à praça">
+
+    <label>Forma de pagamento:</label>
+    <select id="pagamento-cliente">
+        <option value="">Selecione</option>
+        <option value="Pix">Pix</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão de Crédito">Cartão de Crédito</option>
+        <option value="Cartão de Débito">Cartão de Débito</option>
+    </select>
+</div>
+            <div class="botoes-carrinho">
+                <button class="btn-limpar" onclick="limparCarrinho()">
+                    Limpar Carrinho
                 </button>
-            </a>
 
-            <button class="btn-finalizar" onclick="finalizarPedido()">
-                Finalizar Pedido
-            </button>
+                <a href="index.html" class="btn-voltar">
+                    Continuar Comprando
+                </a>
+
+                <button class="btn-finalizar" onclick="finalizarPedido()">
+                    Finalizar Pedido
+                </button>
+            </div>
         </div>
+
     </div>
 
-</div>
-
-<script src="scripts.js"></script>
-
+    <script src="scripts.js"></script>
 </body>
 </html>

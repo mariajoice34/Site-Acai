@@ -1,19 +1,17 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg,
-        #f5e6f7,   /* Roxo claro */
-        #ffffff   /* Branco */);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(180deg, #f5e6f7, #ffffff);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .carrinho-container {
-     background: linear-gradient(180deg,
-        #f5e6f7,   /* Roxo claro */
-        #ffffff   /* Branco */);
+    background: linear-gradient(180deg, #f5e6f7, #ffffff);
     width: 90%;
     max-width: 900px;
     padding: 30px;
@@ -28,81 +26,7 @@ h1 {
 }
 
 #lista-carrinho {
-    list-style: none;
-    padding: 0;
     margin-bottom: 20px;
-}
-
-#lista-carrinho li {
-    background: #c2add8;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-weight: bold;
-    color: #5a189a;
-}
-
-.total-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 50px;
-}
-
-.botoes-carrinho {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-button {
-    height: 35px;   /* Define a altura do botão */
-    width: 200px;   /* Define a largura do botão */
-    border-radius: 20px; /* Deixa as bordas arredondadas */
-
-    /* Cria um fundo */
-    background: linear-gradient(135deg,
-        #6a0dad,   /* Roxo */
-        #b84b9e,   /* Rosa */
-        #ffffff    /* Branco */);
-
-    border: none;    /* Remove a borda padrão do botão */
-    color: #ffffff; /* Cor do texto (branco) */
-    margin: 50px;  /* Espaçamento externo ao redor do botão */
-    cursor: pointer;  /* Muda o cursor para "mãozinha" ao passar o mouse */
-}
-
-
-.btn-limpar {
-       height: 35px;   /* Define a altura do botão */
-    width: 200px;   /* Define a largura do botão */
-    border-radius: 20px; /* Deixa as bordas arredondadas */
-
-    /* Cria um fundo */
-    background: linear-gradient(135deg,
-        #6a0dad,   /* Roxo */
-        #b84b9e,   /* Rosa */
-        #ffffff    /* Branco */);
-
-    border: none;    /* Remove a borda padrão do botão */
-    color: #ffffff; /* Cor do texto (branco) */
-    margin: 50px;  /* Espaçamento externo ao redor do botão */
-    cursor: pointer;  /* Muda o cursor para "mãozinha" ao passar o mouse */
-}
-
-
-
-.btn-voltar {
-    background: #7b2cbf;
-    color: white;
-}
-
-.btn-voltar:hover {
-    background: #5a189a;
 }
 
 .item-carrinho {
@@ -110,6 +34,57 @@ button {
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 15px;
+    color: #5a189a;
+}
+
+.item-carrinho h4 {
+    white-space: pre-line;
+    margin-top: 0;
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    background: #ffffff;
+    color: #5a189a;
+}
+
+.botoes-carrinho {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+button,
+.btn-voltar {
+    min-height: 40px;
+    min-width: 180px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #6a0dad, #b84b9e);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+
+.btn-voltar {
+    background: #7b2cbf;
+}
+
+.btn-voltar:hover {
+    background: #5a189a;
 }
 
 .controle-quantidade {
@@ -120,26 +95,60 @@ button {
 }
 
 .controle-quantidade button {
+    min-width: 38px;
+    width: 38px;
+    min-height: 34px;
+    padding: 5px;
     background: #7b2cbf;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 8px;
-    cursor: pointer;
 }
 
 .btn-remover {
     background: #ff4d6d;
-    color: white;
     margin-top: 10px;
 }
 
-.btn-finalizar {
-    background: linear-gradient(135deg,
-        #6a0dad,   /* Roxo */
-        #b84b9e,   /* Rosa */
-        #ffffff    /* Branco */);
-    color: white;
+@media (max-width: 600px) {
+    .carrinho-container {
+        width: 100%;
+        padding: 18px;
+    }
+
+    button,
+    .btn-voltar {
+        width: 100%;
+    }
+
+    .total-box {
+        padding: 14px;
+    }
 }
 
+.dados-cliente {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    color: #5a189a;
+}
 
+.dados-cliente h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.dados-cliente label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.dados-cliente input,
+.dados-cliente select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 2px solid #e6d9f0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 15px;
+}

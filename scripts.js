@@ -1,20 +1,38 @@
 // ===============================
 // INICIALIZAÇÃO
 // ===============================
-
 document.addEventListener("DOMContentLoaded", function () {
     configurarMenu();
     configurarBotaoHome();
     carregarCarrinho();
+    atualizarPrecoMonte();
+    permitirApenasUmaOpcaoPorProduto();
 });
 
+function permitirApenasUmaOpcaoPorProduto() {
+    const produtos = document.querySelectorAll(".produto-item");
 
+    produtos.forEach(produto => {
+        const opcoes = produto.querySelectorAll(".tamanhos input[type='checkbox']");
+
+        opcoes.forEach(opcao => {
+            opcao.addEventListener("change", function () {
+                if (this.checked) {
+                    opcoes.forEach(outraOpcao => {
+                        if (outraOpcao !== this) {
+                            outraOpcao.checked = false;
+                        }
+                    });
+                }
+            });
+        });
+    });
+}
 // ===============================
 // MENU
 // ===============================
 
 function configurarMenu() {
-
     const secoes = {
         "btn-acai": "cardapio-acai",
         "btn-bebidas": "cardapio-bebidas",
@@ -22,20 +40,16 @@ function configurarMenu() {
     };
 
     Object.keys(secoes).forEach(btnId => {
-
         const botao = document.getElementById(btnId);
         const secao = document.getElementById(secoes[btnId]);
 
         if (botao && secao) {
             botao.addEventListener("click", () => {
-                secao.style.display = "block";
                 secao.scrollIntoView({ behavior: "smooth" });
             });
         }
-
     });
 }
-
 
 // ===============================
 // BOTÃO VER CARDÁPIO
@@ -52,7 +66,6 @@ function configurarBotaoHome() {
     }
 }
 
-
 // ===============================
 // LOCAL STORAGE
 // ===============================
@@ -65,17 +78,16 @@ function salvarCarrinho(carrinho) {
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
-
 // ===============================
-// ADICIONAR AO CARRINHO
+// ADICIONAR PRODUTO NORMAL
 // ===============================
 
 function adicionarCarrinho(botao) {
+    const card = botao.closest(".produto-item");
 
-    const card = botao.closest(".produto-item"); // 🔥 PADRÃO ÚNICO
     if (!card) return;
 
-    const selecionado = card.querySelector("input[type='radio']:checked");
+    const selecionado = card.querySelector("input:checked");
 
     if (!selecionado) {
         alert("Selecione uma opção!");
@@ -85,6 +97,7 @@ function adicionarCarrinho(botao) {
     const descricao = selecionado.value;
 
     const match = descricao.match(/R\$ (\d+[.,]?\d*)/);
+
     if (!match) {
         alert("Erro ao identificar o preço.");
         return;
@@ -94,30 +107,137 @@ function adicionarCarrinho(botao) {
 
     let carrinho = pegarCarrinho();
 
-    const itemExistente = carrinho.find(item => item.descricao === descricao);
-
-    if (itemExistente) {
-        itemExistente.quantidade += 1;
-    } else {
-        carrinho.push({
-            descricao: descricao,
-            preco: preco,
-            quantidade: 1
-        });
-    }
+    carrinho.push({
+        descricao: descricao,
+        preco: preco,
+        quantidade: 1
+    });
 
     salvarCarrinho(carrinho);
 
     alert("✅ Item adicionado ao carrinho!");
+
+    selecionado.checked = false;
 }
 
+// ===============================
+// MONTE SEU AÇAÍ
+// ===============================
+
+function toggleMonteAcai() {
+    const opcoes = document.getElementById("opcoes-monte-acai");
+
+    if (!opcoes) return;
+
+    if (opcoes.style.display === "block") {
+        opcoes.style.display = "none";
+    } else {
+        opcoes.style.display = "block";
+    }
+}
+
+function atualizarPrecoMonte() {
+    const precoMonte = document.getElementById("preco-monte");
+
+    if (!precoMonte) return;
+
+    const adicionais = document.querySelectorAll(".adicional:checked");
+    const coberturas = document.querySelectorAll(".cobertura:checked");
+
+    let total = 10;
+
+    adicionais.forEach(item => {
+        total += parseFloat(item.dataset.preco);
+    });
+
+    // 1 cobertura grátis.
+    // A partir da segunda cobertura, cobra R$ 1,50 cada.
+    if (coberturas.length > 1) {
+        total += (coberturas.length - 1) * 1.5;
+    }
+
+    precoMonte.innerText = total.toFixed(2);
+}
+
+document.addEventListener("change", function(e) {
+    if (
+        e.target.classList.contains("creme") ||
+        e.target.classList.contains("gratis") ||
+        e.target.classList.contains("adicional") ||
+        e.target.classList.contains("cobertura")
+    ) {
+        atualizarPrecoMonte();
+    }
+});
+
+function adicionarMonteAcai() {
+    const cremes = document.querySelectorAll(".creme:checked");
+    const gratis = document.querySelectorAll(".gratis:checked");
+    const adicionais = document.querySelectorAll(".adicional:checked");
+    const coberturas = document.querySelectorAll(".cobertura:checked");
+
+    if (cremes.length === 0) {
+        alert("Escolha pelo menos 1 creme!");
+        return;
+    }
+
+    if (cremes.length > 2) {
+        alert("Você pode escolher no máximo 2 cremes!");
+        return;
+    }
+
+    if (gratis.length > 3) {
+        alert("Você pode escolher no máximo 3 acompanhamentos grátis!");
+        return;
+    }
+
+    if (coberturas.length === 0) {
+        alert("Escolha pelo menos 1 cobertura!");
+        return;
+    }
+
+    const total = parseFloat(document.getElementById("preco-monte").innerText);
+
+    let descricao = "🍧 Monte Seu Açaí\n";
+
+    descricao += "Cremes: ";
+    cremes.forEach(c => descricao += c.value + ", ");
+
+    descricao += "\nAcompanhamentos grátis: ";
+    if (gratis.length === 0) {
+        descricao += "Nenhum";
+    } else {
+        gratis.forEach(g => descricao += g.value + ", ");
+    }
+
+    descricao += "\nAdicionais pagos: ";
+    if (adicionais.length === 0) {
+        descricao += "Nenhum";
+    } else {
+        adicionais.forEach(a => descricao += a.value + ", ");
+    }
+
+    descricao += "\nCoberturas: ";
+    coberturas.forEach(c => descricao += c.value + ", ");
+
+    let carrinho = pegarCarrinho();
+
+    carrinho.push({
+        descricao: descricao,
+        preco: total,
+        quantidade: 1
+    });
+
+    salvarCarrinho(carrinho);
+
+    alert("✅ Monte Seu Açaí adicionado ao carrinho!");
+}
 
 // ===============================
 // CARREGAR CARRINHO
 // ===============================
 
 function carregarCarrinho() {
-
     const container = document.getElementById("lista-carrinho");
     const totalSpan = document.getElementById("total");
 
@@ -128,8 +248,13 @@ function carregarCarrinho() {
     let carrinho = pegarCarrinho();
     let total = 0;
 
-    carrinho.forEach((item, index) => {
+    if (carrinho.length === 0) {
+        container.innerHTML = "<p>Seu carrinho está vazio.</p>";
+        totalSpan.textContent = "0.00";
+        return;
+    }
 
+    carrinho.forEach((item, index) => {
         total += item.preco * item.quantidade;
 
         const div = document.createElement("div");
@@ -152,19 +277,16 @@ function carregarCarrinho() {
         `;
 
         container.appendChild(div);
-
     });
 
     totalSpan.textContent = total.toFixed(2);
 }
-
 
 // ===============================
 // ALTERAR QUANTIDADE
 // ===============================
 
 function alterarQuantidade(index, valor) {
-
     let carrinho = pegarCarrinho();
 
     carrinho[index].quantidade += valor;
@@ -177,20 +299,18 @@ function alterarQuantidade(index, valor) {
     carregarCarrinho();
 }
 
-
 // ===============================
 // REMOVER ITEM
 // ===============================
 
 function removerItem(index) {
-
     let carrinho = pegarCarrinho();
+
     carrinho.splice(index, 1);
 
     salvarCarrinho(carrinho);
     carregarCarrinho();
 }
-
 
 // ===============================
 // LIMPAR CARRINHO
@@ -201,13 +321,11 @@ function limparCarrinho() {
     carregarCarrinho();
 }
 
-
 // ===============================
-// FINALIZAR PEDIDO (WHATSAPP)
+// FINALIZAR PEDIDO NO WHATSAPP
 // ===============================
 
 function finalizarPedido() {
-
     let carrinho = pegarCarrinho();
 
     if (carrinho.length === 0) {
@@ -215,155 +333,48 @@ function finalizarPedido() {
         return;
     }
 
-    let mensagem = "Pedido:%0A%0A";
+    const nome = document.getElementById("nome-cliente").value;
+    const endereco = document.getElementById("endereco-cliente").value;
+    const referencia = document.getElementById("referencia-cliente").value;
+    const pagamento = document.getElementById("pagamento-cliente").value;
+
+    if (nome === "") {
+        alert("Digite seu nome!");
+        return;
+    }
+
+    if (endereco === "") {
+        alert("Digite seu endereço!");
+        return;
+    }
+
+    if (pagamento === "") {
+        alert("Selecione a forma de pagamento!");
+        return;
+    }
+
+    let mensagem = "🍧 *NOVO PEDIDO - AÇAÍ TOP*%0A%0A";
+
+    mensagem += "👤 *Cliente:* " + nome + "%0A";
+    mensagem += "📍 *Endereço:* " + endereco + "%0A";
+
+    if (referencia !== "") {
+        mensagem += "📌 *Referência:* " + referencia + "%0A";
+    }
+
+    mensagem += "💳 *Pagamento:* " + pagamento + "%0A%0A";
+
+    mensagem += "🛒 *Itens do pedido:*%0A";
+
     let total = 0;
 
     carrinho.forEach(item => {
-        mensagem += `${item.descricao} x${item.quantidade}%0A`;
+        mensagem += `- ${item.descricao} x${item.quantidade}%0A`;
+        mensagem += `Subtotal: R$ ${(item.preco * item.quantidade).toFixed(2)}%0A%0A`;
         total += item.preco * item.quantidade;
     });
 
-    mensagem += `%0ATotal: R$ ${total.toFixed(2)}`;
+    mensagem += `💰 *Total:* R$ ${total.toFixed(2)}`;
 
     window.open(`https://wa.me/5584987228300?text=${mensagem}`, "_blank");
-}
-
-function adicionarMonteAcai() {
-
-    const cremes = document.querySelectorAll(".creme:checked");
-    const ingredientes = document.querySelectorAll(".ingrediente:checked");
-    const calda = document.querySelector('input[name="calda"]:checked');
-
-    if (cremes.length === 0) {
-        alert("Escolha pelo menos 1 creme!");
-        return;
-    }
-
-    if (cremes.length > 2) {
-        alert("Você pode escolher no máximo 2 cremes!");
-        return;
-    }
-
-    if (ingredientes.length > 3) {
-        alert("Você pode escolher no máximo 3 ingredientes!");
-        return;
-    }
-
-    if (!calda) {
-        alert("Escolha 1 calda!");
-        return;
-    }
-
-    let descricao = "🍧 Monte Seu Açaí\n";
-
-    descricao += "Cremes: ";
-    cremes.forEach(c => descricao += c.value + ", ");
-
-    descricao += "\nIngredientes: ";
-    ingredientes.forEach(i => descricao += i.value + ", ");
-
-    descricao += "\nCalda: " + calda.value;
-
-    let carrinho = pegarCarrinho();
-
-    carrinho.push({
-        descricao: descricao,
-        preco: 20.00,
-        quantidade: 1
-    });
-
-    salvarCarrinho(carrinho);
-
-    alert("✅ Monte Seu Açaí adicionado ao carrinho!");
-
-}
-
-const precoBase = 15;
-const precoIngrediente = 2;
-const precoCremeExtra = 3;
-const precoCalda = 1.5;
-
-function atualizarPrecoMonte() {
-
-    const cremes = document.querySelectorAll(".creme:checked");
-    const ingredientes = document.querySelectorAll(".ingrediente:checked");
-    const calda = document.querySelector('input[name="calda"]:checked');
-
-    let total = precoBase;
-
-    // Se escolher 2 cremes cobra extra
-    if (cremes.length === 2) {
-        total += precoCremeExtra;
-    }
-
-    // Cada ingrediente soma
-    total += ingredientes.length * precoIngrediente;
-
-    // Se escolheu calda soma
-    if (calda) {
-        total += precoCalda;
-    }
-
-    document.getElementById("preco-monte").innerText = total.toFixed(2);
-}
-
-document.addEventListener("change", function(e) {
-    if (
-        e.target.classList.contains("creme") ||
-        e.target.classList.contains("ingrediente") ||
-        e.target.name === "calda"
-    ) {
-        atualizarPrecoMonte();
-    }
-});
-
-function adicionarMonteAcai() {
-
-    const cremes = document.querySelectorAll(".creme:checked");
-    const ingredientes = document.querySelectorAll(".ingrediente:checked");
-    const calda = document.querySelector('input[name="calda"]:checked');
-
-    if (cremes.length === 0) {
-        alert("Escolha pelo menos 1 creme!");
-        return;
-    }
-
-    if (cremes.length > 2) {
-        alert("Você pode escolher no máximo 2 cremes!");
-        return;
-    }
-
-    if (ingredientes.length > 3) {
-        alert("Você pode escolher no máximo 3 ingredientes!");
-        return;
-    }
-
-    if (!calda) {
-        alert("Escolha 1 calda!");
-        return;
-    }
-
-    let total = parseFloat(document.getElementById("preco-monte").innerText);
-
-    let descricao = "🍧 Monte Seu Açaí\n";
-    descricao += "Cremes: ";
-    cremes.forEach(c => descricao += c.value + ", ");
-
-    descricao += "\nIngredientes: ";
-    ingredientes.forEach(i => descricao += i.value + ", ");
-
-    descricao += "\nCalda: " + calda.value;
-
-    let carrinho = pegarCarrinho();
-
-    carrinho.push({
-        descricao: descricao,
-        preco: total,
-        quantidade: 1
-    });
-
-    salvarCarrinho(carrinho);
-
-    alert("✅ Monte Seu Açaí adicionado ao carrinho!");
-
 }
