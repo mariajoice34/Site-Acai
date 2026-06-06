@@ -338,22 +338,22 @@ function finalizarPedido() {
     const referencia = document.getElementById("referencia-cliente").value;
     const pagamento = document.getElementById("pagamento-cliente").value;
 
-    if (nome === "") {
+    if (nome.trim()=== "") {
         alert("Digite seu nome!");
         return;
     }
 
-    if (endereco === "") {
+    if (endereco.trim() === "") {
         alert("Digite seu endereço!");
         return;
     }
 
-    if (pagamento === "") {
+    if (pagamento.trim() === "") {
         alert("Selecione a forma de pagamento!");
         return;
     }
 
-    let mensagem = "🍧 *NOVO PEDIDO - AÇAÍ TOP*%0A%0A";
+    let mensagem = "🍧 *NOVO PEDIDO - AÇAÍ TOP*\n\n";
 
     mensagem += "👤 *Cliente:* " + nome + "%0A";
     mensagem += "📍 *Endereço:* " + endereco + "%0A";
@@ -376,5 +376,5 @@ function finalizarPedido() {
 
     mensagem += `💰 *Total:* R$ ${total.toFixed(2)}`;
 
-    window.open(`https://wa.me/5584987228300?text=${mensagem}`, "_blank");
+   window.open(`https://wa.me/5584987228300?text=${encodeURIComponent(mensagem)}`, "_blank");
 }
