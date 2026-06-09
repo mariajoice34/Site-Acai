@@ -337,13 +337,14 @@ function finalizarPedido() {
     const endereco = document.getElementById("endereco-cliente").value;
     const referencia = document.getElementById("referencia-cliente").value;
     const pagamento = document.getElementById("pagamento-cliente").value;
+    const tipoEntrega = document.getElementById("tipo-entrega").value;
 
-    if (nome.trim()=== "") {
+    if (nome.trim() === "") {
         alert("Digite seu nome!");
         return;
     }
 
-    if (endereco.trim() === "") {
+    if (tipoEntrega === "Entrega" && endereco.trim() === "") {
         alert("Digite seu endereço!");
         return;
     }
@@ -353,28 +354,51 @@ function finalizarPedido() {
         return;
     }
 
-    let mensagem = "🍧 *NOVO PEDIDO - AÇAÍ TOP*\n\n";
+    let taxaEntrega = 0;
 
-    mensagem += "👤 *Cliente:* " + nome + "%0A";
-    mensagem += "📍 *Endereço:* " + endereco + "%0A";
-
-    if (referencia !== "") {
-        mensagem += "📌 *Referência:* " + referencia + "%0A";
+    if (tipoEntrega === "Entrega") {
+        taxaEntrega = 5;
     }
-
-    mensagem += "💳 *Pagamento:* " + pagamento + "%0A%0A";
-
-    mensagem += "🛒 *Itens do pedido:*%0A";
 
     let total = 0;
 
-    carrinho.forEach(item => {
-        mensagem += `- ${item.descricao} x${item.quantidade}%0A`;
-        mensagem += `Subtotal: R$ ${(item.preco * item.quantidade).toFixed(2)}%0A%0A`;
-        total += item.preco * item.quantidade;
+    let mensagem = "🍧 *NOVO PEDIDO - AÇAÍ TOP*\n";
+    mensagem += "\n\n";
+
+    mensagem += "👤 *Cliente:* " + nome + "\n";
+    mensagem += "🚚 *Tipo do pedido:* " + tipoEntrega + "\n";
+
+    if (tipoEntrega === "Entrega") {
+        mensagem += "📍 *Endereço:* " + endereco + "\n";
+
+        if (referencia.trim() !== "") {
+            mensagem += "📌 *Referência:* " + referencia + "\n";
+        }
+    }
+
+    mensagem += "💳 *Pagamento:* " + pagamento + "\n\n";
+
+    mensagem += "🛒 *ITENS DO PEDIDO*\n";
+    mensagem += "\n";
+
+    carrinho.forEach((item, index) => {
+        let subtotal = item.preco * item.quantidade;
+
+        mensagem += `\n${index + 1}. ${item.descricao}\n`;
+        mensagem += `Quantidade: ${item.quantidade}\n`;
+        mensagem += `Valor Unitário: R$ ${item.preco.toFixed(2)}\n`;
+        mensagem += `Subtotal: R$ ${subtotal.toFixed(2)}\n`;
+
+        total += subtotal;
     });
 
-    mensagem += `💰 *Total:* R$ ${total.toFixed(2)}`;
+    total += taxaEntrega;
 
-   window.open(`https://wa.me/5584987228300?text=${encodeURIComponent(mensagem)}`, "_blank");
+    mensagem += "\n";
+    mensagem += `🚚 *Taxa de Entrega:* R$ ${taxaEntrega.toFixed(2)}\n`;
+    mensagem += `💰 *TOTAL DO PEDIDO:* R$ ${total.toFixed(2)}\n`;
+    mensagem += "\n";
+    mensagem += "🙏 Obrigado pela preferência!";
+
+    window.open(`https://wa.me/5584987228300?text=${encodeURIComponent(mensagem)}`, "_blank");
 }
