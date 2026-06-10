@@ -23,6 +23,7 @@ h1 {
     text-align: center;
     color: #7b2cbf;
     margin-bottom: 25px;
+    font-family: fantasy;
 }
 
 #lista-carrinho {
@@ -53,6 +54,7 @@ h1 {
     margin-bottom: 30px;
     background: #ffffff;
     color: #5a189a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .botoes-carrinho {
@@ -129,11 +131,14 @@ button,
     border-radius: 18px;
     margin-bottom: 25px;
     color: #5a189a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .dados-cliente h3 {
     text-align: center;
     margin-top: 0;
+    font-family: fantasy;
 }
 
 .dados-cliente label {
@@ -151,4 +156,27 @@ button,
     border-radius: 12px;
     box-sizing: border-box;
     font-size: 15px;
+}
+
+.acoes{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:9999;
+}
+.btn-icone{
+    width:55px;
+    height:55px;
+
+    background:white;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.1);
+}
+
+.subtitulo{
+    text-align:center;
+    color:#777;
+    margin-top:-10px;
+    margin-bottom:25px;
 }

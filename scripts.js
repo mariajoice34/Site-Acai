@@ -400,5 +400,8 @@ function finalizarPedido() {
     mensagem += "\n";
     mensagem += "🙏 Obrigado pela preferência!";
 
-    window.open(`https://wa.me/5584987228300?text=${encodeURIComponent(mensagem)}`, "_blank");
+   window.open(
+    `https://wa.me/5584987228300?text=${encodeURIComponent(mensagem)}`,
+    "_blank"
+);
 }
