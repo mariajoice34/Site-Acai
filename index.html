@@ -18,8 +18,10 @@
 </div>
 
     <div class="acoes">
-        <a href="carrinho.html" class="btn-icone">🛒</a>
-        <button class="btn-icone" type="button">📋</button>
+        <a href="carrinho.html" class="btn-icone carrinho-btn">
+    🛒
+    <span id="contador-carrinho">0</span>
+</a>
     </div>
 </header>
 
@@ -34,7 +36,7 @@
         <button id="btn-ver-cardapio">Ver Cardápio</button>
     </div>
 
-    <img src="img/açai.jpeg" alt="Foto de tigela de Açaí">
+    <img src="img/açai2.png" alt="Foto de tigela de Açaí">
 </section>
 
 <section class="buts">
@@ -64,7 +66,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="tradicional" value="Açaí Tradicional 350ml - R$ 10.00" checked>
+                    <input type="checkbox" name="tradicional" value="Açaí Tradicional 350ml - R$ 10.00">
                     <h3>350ml - R$ 10,00</h3>
                 </label>
 
@@ -87,7 +89,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="acai-zero" value="Açaí Zero 350ml - R$ 11.00" checked>
+                    <input type="checkbox" name="acai-zero" value="Açaí Zero 350ml - R$ 11.00">
                     <h3>350ml - R$ 11,00</h3>
                 </label>
 
@@ -110,7 +112,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="guarana" value="Creme de Guaraná 350ml - R$ 10.00" checked>
+                    <input type="checkbox" name="guarana" value="Creme de Guaraná 350ml - R$ 10.00">
                     <h3>350ml - R$ 10,00</h3>
                 </label>
 
@@ -133,7 +135,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="cupuacu" value="Creme de Cupuaçu 350ml - R$ 10.00" checked>
+                    <input type="checkbox" name="cupuacu" value="Creme de Cupuaçu 350ml - R$ 10.00">
                     <h3>350ml - R$ 10,00</h3>
                 </label>
 
@@ -156,7 +158,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="acai-cupuacu" value="Mix Açaí + Cupuaçu 350ml - R$ 10.00" checked>
+                    <input type="checkbox" name="acai-cupuacu" value="Mix Açaí + Cupuaçu 350ml - R$ 10.00" >
                     <h3>350ml - R$ 10,00</h3>
                 </label>
 
@@ -179,7 +181,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="acai-guarana" value="Mix Açaí + Guaraná 350ml - R$ 10.00" checked>
+                    <input type="checkbox" name="acai-guarana" value="Mix Açaí + Guaraná 350ml - R$ 10.00" >
                     <h3>350ml - R$ 10,00</h3>
                 </label>
 
@@ -295,8 +297,8 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="coca" value="Coca-Cola - R$ 6.00" checked>
-                    <h3>Coca-Cola - R$ 6,00</h3>
+                    <input type="checkbox" name="coca" value="Coca-Cola - R$ 6.00">
+                    <h3>Lata 350ml - R$ 6,00</h3>
                 </label>
 
                 <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
@@ -312,7 +314,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="guarana-bebida" value="Guaraná Lata 350ml - R$ 6.00" checked>
+                    <input type="checkbox" name="guarana-bebida" value="Guaraná Lata 350ml - R$ 6.00">
                     <h3>Lata 350ml - R$ 6,00</h3>
                 </label>
 
@@ -328,8 +330,8 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="Fanta" value="Fanta uva - R$ 6.00" checked>
-                    <h3>Fanta Uva - R$ 6,00</h3>
+                    <input type="checkbox" name="Fanta" value="Fanta uva - R$ 6.00">
+                    <h3>Lata 350ml - R$ 6,00</h3>
                 </label>
 
                 <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
@@ -345,8 +347,8 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="Refri" value="Pepsi - R$ 6.00" checked>
-                    <h3> Pepsi - R$ 6,00</h3>
+                    <input type="checkbox" name="Refri" value="Pepsi - R$ 6.00">
+                    <h3>Lata 350ml - R$ 6,00</h3>
                 </label>
 
                 <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
@@ -362,8 +364,8 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="suco" value="acelora - R$ 3.00" checked>
-                    <h3> Suco de Acelora - R$ 3,00</h3>
+                    <input type="checkbox" name="suco" value="acelora - R$ 3.00">
+                    <h3>R$ 3,00</h3>
                 </label>
 
                 <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
@@ -379,8 +381,8 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="suco" value="Goiaba - R$ 3.00" checked>
-                    <h3> Suco de Goiaba - R$ 3,00</h3>
+                    <input type="checkbox" name="suco" value="Goiaba - R$ 3.00" >
+                    <h3>R$ 3,00</h3>
                 </label>
 
                 <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
@@ -396,8 +398,8 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="suco" value="manga - R$ 3.00" checked>
-                    <h3> Suco de Manga - R$ 3,00</h3>
+                    <input type="checkbox" name="suco" value="manga - R$ 3.00" >
+                    <h3>R$ 3,00</h3>
                 </label>
 
                 <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
@@ -413,8 +415,8 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="suco" value="Maracuja - R$ 3.00" checked>
-                    <h3> Suco de Maracuja - R$ 3,00</h3>
+                    <input type="checkbox" name="suco" value="Maracuja - R$ 3.00">
+                    <h3>R$ 3,00</h3>
                 </label>
                 <button onclick="adicionarCarrinho(this)">Adicionar ao carrinho</button>
             </div>
@@ -437,7 +439,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="coxinha" value="Coxinha de Frango - R$ 3.00" checked>
+                    <input type="checkbox" name="coxinha" value="Coxinha de Frango - R$ 3.00">
                     <h3>Frango - R$ 3,00</h3>
                 </label>
 
@@ -454,7 +456,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="pastel" value="Pastel de Carne - R$ 4.00" checked>
+                    <input type="checkbox" name="pastel" value="Pastel de Carne - R$ 4.00" >
                     <h3>Carne - R$ 4,00</h3>
                 </label>
 
@@ -476,7 +478,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="coxinha" value="Coxinha de Frango - R$ 3.00" checked>
+                    <input type="checkbox" name="coxinha" value="Coxinha de Frango - R$ 3.00">
                     <h3>Frango - R$ 3,00</h3>
                 </label>
 
@@ -493,7 +495,7 @@
 
             <div class="tamanhos">
                 <label class="opcao-tamanho">
-                    <input type="checkbox" name="enroladinho" value="Enroladinho - R$ 3.00" checked>
+                    <input type="checkbox" name="enroladinho" value="Enroladinho - R$ 3.00">
                     <h3>Enroladinho - R$ 3,00</h3>
                 </label>
 
@@ -513,8 +515,16 @@
 
     <p>📍 Campina Grande - PB</p>
 
-    <p>📱 WhatsApp: (84) 98722-8300</p>
+    <p>🕒 Funcionamento</p>
+    <p>Segunda a Domingo</p>
+    <p>18h às 23h</p>
 </footer>
+<!-- Botão flutuante do WhatsApp -->
+<a href="https://wa.me/5584987228300"
+   class="whatsapp-fixo"
+   target="_blank">
+   💬
+</a>
 <script src="scripts.js"></script>
 </body>
 </html>

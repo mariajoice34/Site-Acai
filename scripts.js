@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     carregarCarrinho();
     atualizarPrecoMonte();
     permitirApenasUmaOpcaoPorProduto();
+    atualizarContadorCarrinho();
 });
 
 function permitirApenasUmaOpcaoPorProduto() {
@@ -78,6 +79,22 @@ function salvarCarrinho(carrinho) {
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
+function atualizarContadorCarrinho() {
+    const contador = document.getElementById("contador-carrinho");
+
+    if (!contador) return;
+
+    const carrinho = pegarCarrinho();
+
+    let quantidade = 0;
+
+    carrinho.forEach(item => {
+        quantidade += item.quantidade;
+    });
+
+    contador.textContent = quantidade;
+}
+
 // ===============================
 // ADICIONAR PRODUTO NORMAL
 // ===============================
@@ -114,6 +131,7 @@ function adicionarCarrinho(botao) {
     });
 
     salvarCarrinho(carrinho);
+    atualizarContadorCarrinho();
 
     alert("✅ Item adicionado ao carrinho!");
 
@@ -229,6 +247,7 @@ function adicionarMonteAcai() {
     });
 
     salvarCarrinho(carrinho);
+    atualizarContadorCarrinho();
 
     alert("✅ Monte Seu Açaí adicionado ao carrinho!");
 }
@@ -297,6 +316,7 @@ function alterarQuantidade(index, valor) {
 
     salvarCarrinho(carrinho);
     carregarCarrinho();
+    atualizarContadorCarrinho();
 }
 
 // ===============================
@@ -310,6 +330,8 @@ function removerItem(index) {
 
     salvarCarrinho(carrinho);
     carregarCarrinho();
+    atualizarContadorCarrinho();
+
 }
 
 // ===============================
