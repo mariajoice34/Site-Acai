@@ -1,4 +1,4 @@
-# site de Açaí
+# site de açaí
 
 Site desenvolvido para simular o sistema de pedidos de uma açaiteria, permitindo que o cliente escolha produtos, personalize seu pedido, utilize um carrinho de compras e finalize o atendimento pelo WhatsApp.
 
