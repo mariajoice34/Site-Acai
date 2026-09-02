@@ -45,3 +45,7 @@ Durante o desenvolvimento foram trabalhados conceitos como:
 - `carrinho.css` — estilos do carrinho
 - `script.js` — funcionalidades e interações do sistema
 - `imagem/` — imagens utilizadas no projeto
+
+## Acesse o projeto
+
+[Ver site publicado](https://mariajoice34.github.io/site-acai/)
